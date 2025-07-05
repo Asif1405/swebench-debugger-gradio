@@ -1,4 +1,4 @@
-# JavaScript Test Harness Debugger with Gradio
+# SWEBENCH Test Debugger with Gradio
 
 A powerful web-based tool for building and running JavaScript test suites in isolated Docker environments. This tool provides a user-friendly Gradio interface for setting up containerized testing environments, executing tests, and parsing test output from various JavaScript testing frameworks.
 
@@ -34,7 +34,7 @@ A powerful web-based tool for building and running JavaScript test suites in iso
 1. **Clone the repository**:
    ```bash
    git clone <repository-url>
-   cd harness-debugger-gradio
+   cd swebench-debugger-gradio
    ```
 
 2. **Install Python dependencies**:
@@ -60,8 +60,8 @@ A powerful web-based tool for building and running JavaScript test suites in iso
 
 2. **Using Docker directly**:
    ```bash
-   docker build -t harness-debugger .
-   docker run -p 7860:7860 -v /var/run/docker.sock:/var/run/docker.sock harness-debugger
+   docker build -t swebench-debugger-gradio .
+   docker run -p 7860:7860 -v /var/run/docker.sock:/var/run/docker.sock swebench-debugger-gradio
    ```
 
 ## 📖 Usage
