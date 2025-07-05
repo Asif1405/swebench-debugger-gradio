@@ -1,0 +1,37 @@
+# .gitignore
+
+# Ignore Python virtual environments
+venv/
+.venv/
+.env/
+env/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+# Gradio cache
+.gradio/
+# Pytest cache
+.pytest_cache/
+
+# Coverage reports
+.coverage
+.coverage.*
+htmlcov/
+
+# environment variables file
+.env
+.env.local
+
+# Ignore IDE/editor specific files
+.idea/
+.vscode/
+*.swp
+
+# Ignore macOS system files
+.DS_Store

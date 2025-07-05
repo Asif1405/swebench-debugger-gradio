@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  docker-harness-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: docker-harness-gradio
+    user: root
+    privileged: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./build_artifacts:/app/build_artifacts
+    ports:
+      - "5151:${GRADIO_SERVER_PORT:-7860}"
+    environment:
+      GRADIO_SERVER_NAME: "0.0.0.0"
+      GRADIO_SERVER_PORT: "7860"
+      GRADIO_THEME: "soft"
+    restart: unless-stopped
+    networks:
+      - docker-harness-net
+    labels:
+      com.docker.compose.project: docker-harness
+      com.docker.compose.service: gradio-app
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'
+          memory: 4G
+        reservations:
+          cpus: '0.5'
+          memory: 512M
+
+networks:
+  docker-harness-net:
+    driver: bridge
+
+volumes:
+  build_artifacts:
+    driver: local
